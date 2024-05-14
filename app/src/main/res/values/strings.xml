@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MyHealthCareApp1</string>
+    <string name="app_name1" translatable="false">24*7 Healthcare</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtRegisterNewUser">Register for New User</string>
+</resources>
