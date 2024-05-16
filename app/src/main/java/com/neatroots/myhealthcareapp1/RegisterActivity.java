@@ -2,6 +2,7 @@ package com.neatroots.myhealthcareapp1;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,9 +44,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userName=edUserName.getText().toString();
-                String email=edEmail.getText().toString();
+                String email=edEmail.getText().toString().trim();
                 String password=edPassword.getText().toString();
                 String conpassword=edConfirmPassword.getText().toString();
+                Database db=new Database(getApplicationContext(),"healthcare",null,1);
                 if(userName.isEmpty() ||
                         email.isEmpty() || password.isEmpty()
                         || conpassword.isEmpty()) {
@@ -55,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if(password.compareTo(conpassword)==0){
                         if(isValid(password))
                         {
+                            db.register(userName,email,password);
                             Toast.makeText(getApplicationContext(), "Record Inserted", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent (RegisterActivity.this,LoginActivity.class));
                         }
@@ -67,6 +70,14 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "password and confirm password are not matched", Toast.LENGTH_SHORT).show();
                     }
                 }
+//                if(isValidEmail(email)){
+//                    Toast.makeText(RegisterActivity.this,"Email is valid",
+//                            Toast.LENGTH_SHORT).show();
+//                }
+//                else {
+//                    Toast.makeText(RegisterActivity.this," invalid email address",Toast.LENGTH_SHORT).show();
+//                }
+
             }
         });
 
@@ -110,4 +121,6 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
         }
     }
+
+
 }
