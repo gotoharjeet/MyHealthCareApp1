@@ -37,36 +37,35 @@ public class LoginActivity extends AppCompatActivity {
 
 
         btn.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+//            String UserName=edUserName.getText().toString();
+//            String Password=edPassword.getText().toString();
+//            Database db=new Database(getApplicationContext(),"healthcare",null,1);
+//
+//
+//            if(UserName.isEmpty() || Password.isEmpty()) {
+//                Toast.makeText(getApplicationContext(),
+//                        "Pl. fill all details.....", Toast.LENGTH_SHORT).show();
+//            }
+//            else {
+//                    int islogin=db.login(UserName,Password);
+//                    if(islogin == 1)    {
+////     Preserve the userdetails in cache memory
+//                    SharedPreferences sharedPreferences=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor=sharedPreferences.edit();
+//                    editor.putString("username",UserName);
+//                    //to save our data with key and value
+//                        editor.apply();
+//                        Toast.makeText(getApplicationContext(),"Login Success", Toast.LENGTH_SHORT).show();
+//                        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+//                    }
+//                    else
+//                    {
+//                        startActivity(new Intent(LoginActivity.this, LoginActivity.class));
+//                        Toast.makeText(getApplicationContext(),"invalid Login", Toast.LENGTH_SHORT).show();
+//                    }
 
-            String UserName=edUserName.getText().toString();
-            String Password=edPassword.getText().toString();
-            Database db=new Database(getApplicationContext(),"healthcare",null,1);
-
-
-            if(UserName.isEmpty() || Password.isEmpty()) {
-                Toast.makeText(getApplicationContext(),
-                        "Pl. fill all details.....", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                    int islogin=db.login(UserName,Password);
-                    if(islogin == 1)    {
-
-                        SharedPreferences sharedPreferences =getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor=sharedPreferences.edit();
-                        editor.putString("username",UserName);
-                        //to save our data with key and value
-                        editor.apply();
-                        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-                        Toast.makeText(getApplicationContext(),"Login Success", Toast.LENGTH_SHORT).show();
-
-                    }
-                    else
-                    {
-                        startActivity(new Intent(LoginActivity.this, LoginActivity.class));
-                        Toast.makeText(getApplicationContext(),"invalid Login", Toast.LENGTH_SHORT).show();
-                    }
-
-            }
+ //           }
 
         });
         tv.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this,RegisterActivity.class)));

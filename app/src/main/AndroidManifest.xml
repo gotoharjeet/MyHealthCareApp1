@@ -13,8 +13,35 @@
         android:theme="@style/Theme.MyHealthCareApp1"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".DoctorDetailsActivity"
             android:exported="false" />
+        <activity
+            android:name=".OrderdetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HealtharticlesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuymedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FinddoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LabtestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true">
+
+            <!--
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+            -->
+        </activity>
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
